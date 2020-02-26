@@ -4,13 +4,32 @@ public class Calculadora{
 
     public static void main(String[] args){
 
-        int primeiroValor = Integer.parseInt(JOptionPane.showInputDialog("Insira o primeiro numero Inteiro:"));
+        String operador;
+        int primeiroValor;
+        int segundoValor;
 
-        int segundoValor = Integer.parseInt(JOptionPane.showInputDialog("Insira o segundo numero Inteiro:"));
+        int resultado = 0;
+
+        primeiroValor = Integer.parseInt(JOptionPane.showInputDialog("Insira numero Inteiro:"));
+
+        do{
+            operador = JOptionPane.showInputDialog("Selecione:\n+ (somar)\n - (subtrair)");
+
+        }while(!operador.equals("+") && !operador.equals("-"));
+
+        segundoValor = Integer.parseInt(JOptionPane.showInputDialog("Insira numero Inteiro:"));
         
-        int soma = primeiroValor + segundoValor;
+        if(operador.equals("+")){
 
-        JOptionPane.showMessageDialog(null, primeiroValor + " + " + segundoValor + " = " + soma);
+            resultado = primeiroValor + segundoValor;
+
+        }else if (operador.equals("-")){
+
+            resultado = primeiroValor - segundoValor;
+        }
+
+
+        JOptionPane.showMessageDialog(null, primeiroValor + operador + segundoValor + " = " + resultado);
 
 
     }
